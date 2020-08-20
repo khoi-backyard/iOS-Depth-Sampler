@@ -21,7 +21,7 @@ enum CameraType {
             }
             devices = AVCaptureDevice.DiscoverySession(deviceTypes: deviceTypes, mediaType: .video, position: .front).devices
         case .back(let requireDepth):
-            var deviceTypes: [AVCaptureDevice.DeviceType] = [.builtInDualCamera]
+            var deviceTypes: [AVCaptureDevice.DeviceType] = [.builtInDualCamera, .builtInDualWideCamera]
             if !requireDepth {
                 deviceTypes.append(contentsOf: [.builtInWideAngleCamera, .builtInTelephotoCamera])
             }
